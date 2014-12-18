@@ -1,0 +1,17 @@
+#!/bin/bash #-*sh-*-
+
+#==============================================================================
+#
+# Author: Sven Thoden
+#___________________________________________
+#
+# Usage: run_findbugs
+#
+# Description: 
+#      Script to start gcviewer program. 
+#
+#==============================================================================
+
+JAVA_TOOLS=
+
+java -Xmx1024M -jar ~/java/findbugs-1.3.9/lib/findbugs.jar -gui

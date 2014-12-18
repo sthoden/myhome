@@ -1,0 +1,21 @@
+#!/bin/bash # -*-sh-*-
+#==============================================================================
+#
+# Author: Sven Thoden
+#___________________________________________
+#
+# Usage: run_gcviewer
+#
+# Description: 
+#      Script to start gcviewer program. 
+#
+#==============================================================================
+
+GCVIEWERJAR=${HOME}/src/GCViewer.git/target/gcviewer-1.34-SNAPSHOT.jar
+
+JVM_ARGS="-Xms1024m -Xmx1024m"
+
+java -jar  ${GCVIEWERJAR} $*
+
+
+# eof

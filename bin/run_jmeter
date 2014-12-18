@@ -1,0 +1,20 @@
+#/bin/bash 
+#___________________________________________
+# Author: Sven Thoden
+#___________________________________________
+#
+# Usage: run_jmeter.sh 
+#
+# Description: 
+#      Script to start jmeter. 
+#
+#___________________________________________
+
+
+
+export JMETER_HOME=${HOME}/java/apache-jmeter-2.11
+
+cd ${JMETER_HOME}/bin
+
+JVM_ARGS="-Xms2G -Xmx2G"
+./jmeter.sh &

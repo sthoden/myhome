@@ -1,0 +1,11 @@
+#!/bin/bash #-*sh-*-
+# set JVM_ARGS="-Xms1024m -Xmx1024m -Dpropname=propvalue"
+
+export JDEPEND_HOME=${HOME}/java/jdepend-2.9.1/
+
+set CLASSPATH=$CLASSPATH;$JDEPEND_HOME/lib/jdepend-2.9.1.jar
+
+# java jdepend.textui.JDepend -components com.xyx.package_a,com.xyz.package_b /path/to/classes
+
+java jdepend.swingui.JDepend $*
+
