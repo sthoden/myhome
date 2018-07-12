@@ -24,8 +24,8 @@ alias 'wf=ssh markn@markn.webfactional.com'
 # -------------------------------------------------------------------
 # Oddball stuff
 # -------------------------------------------------------------------
-alias 'sloc=/usr/local/sloccount/bin/sloccount'
-alias 'adventure=emacs -batch -l dunnet' # play adventure in the console
+alias psh=pushd
+alias pop=popd
 alias 'ttop=top -ocpu -R -F -s 2 -n30' # fancy top
 alias 'rm=rm -i' # make rm command (potentially) less destructive
 
@@ -37,7 +37,8 @@ alias acat='< ~/.zsh/aliases.zsh'
 alias fcat='< ~/.zsh/functions.zsh'
 alias sz='source ~/.zshrc'
 
-alias h='history 100'
+# alias h='history 100'
+alias h="omz_history"
 alias dirs='dirs -v' # list with numbers
 alias bc='bc -l'
 
@@ -49,6 +50,8 @@ then
 	alias 'mate=open -a "TextMate"'
 	alias 'slack=open -a "Slack"'
 	alias 'spotify=open -a "Slack"'
+	# alias use_j9="export JAVA_HOME=`/usr/libexec/java_home -v 1.9`"
+	# alias use_j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`"
 fi
 if [[ `uname` == 'Linux' ]]
 then

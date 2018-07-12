@@ -1,4 +1,6 @@
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+# -*- mode: sh -*-
+
+export PATH=${HOME}/bin:/usr/local/bin:/usr/local/sbin:${PATH}
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/sthoden/.oh-my-zsh
@@ -7,7 +9,8 @@ export MYZSH=/Users/sthoden/myhomefiles/zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -58,13 +61,41 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git python)
+# plugins=(git python tmux emacs)
+plugins=(git python tmux)
 
 source $ZSH/oh-my-zsh.sh
 source $MYZSH/alias.zsh
 source $MYZSH/functions.zsh
+source $MYZSH/hybris.zsh
 
-# User configuratio<n
+# Shell history
+HISTSIZE=1000
+SAVEHIIST=2000
+HISTFILE=~/.zsh_history
+
+
+##-----------------------------------------------------------------------------
+## Java
+##-----------------------------------------------------------------------------
+JAVA_LIB_DIR=${HOME}/java
+
+# for Mac OS 10
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export CLASSPATH=${CLASSPATH}:.
+
+##-----------------------------------------------------------------------------
+## mysql
+##-----------------------------------------------------------------------------
+export PATH=/usr/local/bin:/${PATH}:/usr/local/mysql/bin
+
+##-----------------------------------------------------------------------------
+## apache maven
+##-----------------------------------------------------------------------------
+# export MAVEN_HOME=${HOME}/java/apache-maven-2.2.1
+export MAVEN_OPTS="-Xms256m -Xmx1024m"
+# export PATH=${MAVEN_HOME}/bin:${PATH}
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

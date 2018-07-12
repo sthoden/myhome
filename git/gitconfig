@@ -1,0 +1,41 @@
+[core]
+	excludesfile = /Users/sthoden/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	email = s.thoden@reply.de
+	name = Sven Thoden
+[alias]
+	cp = cherry-pick
+	st = status -s
+	cl = clone
+	ci = commit
+	cim = commit -m
+	ciam = commit -a -m
+	co = checkout
+	br = branch 
+	diff = diff --word-diff
+	dc = diff --cached
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+	gr = grep -Ii
+	rh = reset --hard
+	logtree = log --graph --oneline --decorate --all
+	showtag = !sh -c 'git rev-parse $1 | xargs git cat-file -p' -
+	day = log --since="yesterday"
+    	week = log --since="1 week ago"
+
+
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = /usr/local/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	trustExitCode = true
+	cmd = /usr/local/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"

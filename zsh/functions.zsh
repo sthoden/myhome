@@ -1,4 +1,4 @@
-# 
+# -*- mode: sh -*-
 
 # -------------------------------------------------------------------
 # compressed file expander
@@ -58,4 +58,18 @@ function console () {
   else
     tail -f /var/log/system.log
   fi
+}
+
+# -------------------------------------------------------------------
+# git helper functions
+# -------------------------------------------------------------------
+function gitshowtags () {
+git for-each-ref refs/tags/$TAG --shell --format='
+TAG=%(refname)
+COMMIT=%(objectname)
+TAGGER=%(tagger)
+EMAIL=%(taggeremail)
+DATE=%(taggerdate)
+CONTENTS=%(contents)
+'
 }
