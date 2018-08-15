@@ -74,6 +74,11 @@ HISTSIZE=1000
 SAVEHIIST=2000
 HISTFILE=~/.zsh_history
 
+# Current ulimit can be listed with ulimit -a
+# The maximum number of open file descriptors. 
+ulimit -n 20000
+# The maximum number of processes available to a single user.
+ulimit -u 2048
 
 ##-----------------------------------------------------------------------------
 ## Java

@@ -73,3 +73,28 @@ DATE=%(taggerdate)
 CONTENTS=%(contents)
 '
 }
+
+function gitlistmerged() {
+    for branch in `git branch -r --merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r
+}
+
+# -------------------------------------------------------------------
+# find in java files
+# -------------------------------------------------------------------
+function jvgrp () {
+    if [ $# -ne 1 ]; then
+	echo "Usage: jvgrp <term>"
+    else
+	grep --include="*.java" -R $1 .
+    fi
+}
+
+function jvfnd() {
+    find . -type f -name "*$1*.java" 2>1
+}
+
+function grp () {
+  grep  -R $1 .
+}
+
+

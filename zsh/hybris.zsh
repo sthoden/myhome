@@ -1,7 +1,5 @@
 
-
-
-function sethy {
+function hyset {
     if [[ -a "hybrisserver.sh" ]]; then
 	export HYHOME=`pwd`
 	cd $HYHOME
@@ -19,6 +17,16 @@ function hyinit {
 	echo "HYHOME not set"
     fi
 }
+
+function hyupdate {
+    if [[ -a $HYHOME ]]; then
+	cd $HYHOME
+	nohup ant updatesystem -Dtenant=master > ./updatesystem-$(date +%Y-%m-%dT%H-%M-%S).log 2>&1 &
+    else
+	echo "HYHOME not set"
+    fi
+}
+
 
 function hysrv () {
     if [[ -a $HYHOME ]]; then
@@ -41,5 +49,8 @@ function hyaca () {
     fi
 }
 
+function hygo () {
+    cd $HYHOME
+}
 
 echo "hybris alias set"

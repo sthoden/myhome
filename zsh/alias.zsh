@@ -42,6 +42,11 @@ alias h="omz_history"
 alias dirs='dirs -v' # list with numbers
 alias bc='bc -l'
 
+alias gfd="git fetch origin develop"
+alias gmfh="git merge FETCH_HEAD"
+alias gmb="git merge --no-ff "
+
+
 if [[ `uname` == 'Darwin' ]]
 then
 	alias 'excel=open -a "Microsoft Excel"'
