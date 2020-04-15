@@ -1,6 +1,6 @@
 # -*- mode: sh -*-
 
-export PATH=${HOME}/bin:/usr/local/bin:/usr/local/sbin:${PATH}
+export PATH=${HOME}/bin:/usr/local/bin:/usr/local/sbin:${PATH}:.
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/sthoden/.oh-my-zsh
@@ -62,10 +62,11 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git python tmux emacs)
-plugins=(git python tmux)
+plugins=(git git-flow git-flow-completion python tmux docker docker-compose jhipster)
 
 source $ZSH/oh-my-zsh.sh
 source $MYZSH/alias.zsh
+
 source $MYZSH/functions.zsh
 source $MYZSH/hybris.zsh
 
@@ -74,17 +75,22 @@ HISTSIZE=1000
 SAVEHIIST=2000
 HISTFILE=~/.zsh_history
 
-# Current ulimit can be listed with ulimit -a
-# The maximum number of open file descriptors. 
+DIRSTACKSIZE=8
+setopt autopushd pushdminus pushdsilent pushdtohome
+
+
+
+##-----------------------------------------------------------------------------
+## Current ulimit can be listed with ulimit -a
+## The maximum number of open file descriptors. 
 ulimit -n 20000
-# The maximum number of processes available to a single user.
+## The maximum number of processes available to a single user.
 ulimit -u 2048
 
 ##-----------------------------------------------------------------------------
 ## Java
 ##-----------------------------------------------------------------------------
 JAVA_LIB_DIR=${HOME}/java
-
 # for Mac OS 10
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export CLASSPATH=${CLASSPATH}:.
@@ -92,7 +98,7 @@ export CLASSPATH=${CLASSPATH}:.
 ##-----------------------------------------------------------------------------
 ## mysql
 ##-----------------------------------------------------------------------------
-export PATH=/usr/local/bin:/${PATH}:/usr/local/mysql/bin
+export PATH=${PATH}:/usr/local/mysql/bin
 
 ##-----------------------------------------------------------------------------
 ## apache maven
@@ -105,7 +111,7 @@ export MAVEN_OPTS="-Xms256m -Xmx1024m"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"

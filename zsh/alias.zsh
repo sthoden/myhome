@@ -45,6 +45,7 @@ alias bc='bc -l'
 alias gfd="git fetch origin develop"
 alias gmfh="git merge FETCH_HEAD"
 alias gmb="git merge --no-ff "
+alias gdod="git diff origin/develop"
 
 
 if [[ `uname` == 'Darwin' ]]
